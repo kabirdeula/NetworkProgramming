@@ -18,7 +18,7 @@
 
     2.1 The InetAddress Class: Creating New InetAddress Objects, Getter
     2.2 Methods, Address Types, Testing Reachability and Object Methods
-    2.3 Inet4Address and Inet6AddresS
+    2.3 Inet4Address and Inet6Address
     2.4 The Network Interface Class: Factory Method & Getter Method
     2.5 Some Useful Programs: SpamCheck, Processing Web Server Logfiles
 </p>
