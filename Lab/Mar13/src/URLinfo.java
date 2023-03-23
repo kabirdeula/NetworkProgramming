@@ -1,6 +1,5 @@
 import java.net.*;
 
-
 public class URLinfo {
     public static void main(String[] args) {
         if (args.length != 1) {
@@ -8,7 +7,7 @@ public class URLinfo {
             System.exit(1);
         }
         try {
-            URL url = new URL(args[0]);
+            URL url = new URL("https://www.tutorialspoint.com/javaexamples/net_singleuser.htm");
             System.out.println("Protocol: " + url.getProtocol());
             System.out.println("Host: " + url.getHost());
             System.out.println("Port: " + url.getPort());
