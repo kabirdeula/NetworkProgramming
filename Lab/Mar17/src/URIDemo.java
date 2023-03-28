@@ -1,14 +1,22 @@
 import java.net.URLEncoder;
+import java.util.Scanner;
 import java.net.URLDecoder;
 import java.io.UnsupportedEncodingException;
 
 public class URIDemo {
     public static void main(String[] args) {
-        String originalURI = "http://www.example.com/path with spaces?query=param&another_query=another_param";
+        // String originalURI = "http://www.example.com/path with spaces?query=param&another_query=another_param";
         String encodedURI = null;
         String decodedURI = null;
         String charset = "UTF-8"; // the character encoding to be used for encoding/decoding
 
+        String originalURI;
+
+        try (Scanner inputScanner = new Scanner(System.in)) {
+            System.out.print("Enter your URI: ");
+            originalURI = inputScanner.next();
+        }
+        
         // Encoding the URI
         try {
             encodedURI = URLEncoder.encode(originalURI, charset);
