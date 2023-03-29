@@ -14,7 +14,7 @@
 | 10.   | Implementation of Client Server Communication using TCP.                                                                                                                                  |        | ToDo   |
 | 11.   | Java multicast programming.                                                                                                                                                               |        | ToDo   |
 | 12.   | [Determining whether an IP address is IPv4 or IPv6.](#lab-12)                                                                                                                             |        | ToDo   |
-| 13.   | Implmenting the characteristics of an IP address.                                                                                                                                         |        | ToDo   |
+| 13.   | [Implmenting the characteristics of an IP address.](#lab-13)                                                                                                                                         |        | ToDo   |
 | 14.   | Implementation of Authenticator Class.                                                                                                                                                    |        | ToDo   |
 | 15.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                |        | ToDo   |
 | 16.   | Develop a program to print the HTTP header.                                                                                                                                               |        | ToDo   |
@@ -203,7 +203,7 @@ import java.net.*;
 import java.io.*;
 
 public class URIData {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         URL url = new URL("https://animechan.vercel.app/api/random");
         
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
