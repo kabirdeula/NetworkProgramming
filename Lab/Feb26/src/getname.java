@@ -23,7 +23,8 @@ public class getname{
             String ipAddress = input.next();
             try{
                 InetAddress address = InetAddress.getByName(ipAddress);
-                System.out.println(ipAddress + ": " + address.getHostAddress());
+                // System.out.println(ipAddress + ": " + address.getHostAddress());
+                System.out.println(ipAddress + ": " + address);
             }catch(UnknownHostException e){
                 System.out.println("Could not find IP address of " + ipAddress);
             }

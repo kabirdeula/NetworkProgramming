@@ -57,14 +57,14 @@
 <b>URLConnections: [5 LH]</b>
 
     5.1 Openning URLConnections
-    5.2 Reading Data trom Server
+    5.2 Reading Data from Server
     5.3 Reading Header: Retrieving specific Header Fields and Retrieving Arbitrary Header Fields
     5.4 Cache: Web Cache for Java
-    S.5 Contiguring the Connection: protected URL url, protected boolean connected, protected boolean allowUserInteraction, protected boolcan dolnput, protected boolean doOutput, protected boolean ifModificationSince, protected boolean useCaches and Timeouts
+    S.5 Contiguring the Connection: protected URL url, protected boolean connected, protected boolean allowUserInteraction, protected boolean doInput, protected boolean doOutput, protected boolean ifModificationSince, protected boolean useCaches and Timeouts
     5.6 Configuring the Client Request HTTP Header
     5.7 Security Considerations for URLConnections
-    5.8 Guessing MIME Media 1ypes
-    5.9 HttpURLConnection: The Request Methods, Disconnecting from the Server, Handling Server Responses, Proxies and Streaming Modee
+    5.8 Guessing MIME Media Types
+    5.9 HttpURLConnection: The Request Methods, Disconnecting from the Server, Handling Server Responses, Proxies and Streaming Mode
 </p>
 
 # Unit 6:

@@ -1,6 +1,8 @@
 import java.net.*;
 public class SpamCheck {
-    public static final String BLACKHOLE = "spamhaus.org/sbl";
+    public static final String BLACKHOLE = "sbl.spamhaus.org";
+    // public static final String BLACKHOLE = "http://cleantalk.org/blacklists";
+    // http://cleantalk.org/blacklists
     public static void main(String[] args) throws UnknownHostException{
         for(String arg: args){
             if(isSpammer(arg)){
