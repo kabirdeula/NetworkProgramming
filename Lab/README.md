@@ -3,21 +3,21 @@
 |  S.N. |                                                                                           Topic                                                                                           |  Date  | Status |
 | :---: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :----- |
 | 1.    | [Looking up internet address of localhost.](#lab-1)                                                                                                                                       |        | Done   |
-| 2.    | Implement the program whether the host is a spammer or not.                                                                                                                               |        | ToDo   |
+| 2.    | [Implement the program whether the host is a spammer or not.](#lab-2)                                                                                                                     |        | ToDo   |
 | 3.    | [Implementation of port scanner.](#lab-3)                                                                                                                                                 |        | Done   |
 | 4.    | [Implementing parts of URL.](#lab-4)                                                                                                                                                      |        | Done   |
 | 5.    | [Encoding and Decoding URI.](#lab-5)                                                                                                                                                      |        | ToDo   |
 | 6.    | [Retrieving data from URI.](#lab-6)                                                                                                                                                       |        | ToDo   |
 | 7.    | [Implementation of ping programming. (Testing Reachability is Reachable.)](#lab-7)                                                                                                        |        | Done   |
 | 8.    | [Implementing a list of all network interfaces on the localhost.](#lab-8)                                                                                                                 |        | Done   |
-| 9.    | Implementation of Client Server Communication using UDP.                                                                                                                                  |        | ToDo   |
-| 10.   | Implementation of Client Server Communication using TCP.                                                                                                                                  |        | ToDo   |
-| 11.   | Java multicast programming.                                                                                                                                                               |        | ToDo   |
-| 12.   | [Determining whether an IP address is IPv4 or IPv6.](#lab-12)                                                                                                                             |        | ToDo   |
-| 13.   | [Implmenting the characteristics of an IP address.](#lab-13)                                                                                                                                         |        | ToDo   |
-| 14.   | Implementation of Authenticator Class.                                                                                                                                                    |        | ToDo   |
-| 15.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                |        | ToDo   |
-| 16.   | Develop a program to print the HTTP header.                                                                                                                                               |        | ToDo   |
+| 9.    | [Determining whether an IP address is IPv4 or IPv6.](#lab-9)                                                                                                                              |        | ToDo   |
+| 10.   | [Implmenting the characteristics of an IP address.](#lab-10)                                                                                                                              |        | ToDo   |
+| 11.   | [Develop a program to print the HTTP header.](#lab-11)                                                                                                                                    |        | ToDo   |
+| 12.   | Implementation of Client Server Communication using UDP.                                                                                                                                  |        | ToDo   |
+| 13.   | Implementation of Client Server Communication using TCP.                                                                                                                                  |        | ToDo   |
+| 14.   | Java multicast programming.                                                                                                                                                               |        | ToDo   |
+| 15.   | Implementation of Authenticator Class.                                                                                                                                                    |        | ToDo   |
+| 16.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                |        | ToDo   |
 | 17.   | Getting information about a Socket.                                                                                                                                                       |        | ToDo   |
 | 18.   | Getting information about a ServerSocket.                                                                                                                                                 |        | ToDo   |
 | 19.   | Implementation of Whois Server.                                                                                                                                                           |        | ToDo   |
@@ -55,6 +55,49 @@ public class getOwnIP{
 
 ```
 IP of this system: 10.1.60.11
+```
+
+## Lab 2
+
+### Source Code
+
+```java
+
+import java.net.*;
+public class SpamCheck {
+    public static final String BLACKHOLE = "sbl.spamhaus.org";
+    public static void main(String[] args) throws UnknownHostException{
+        for(String arg: args){
+            if(isSpammer(arg)){
+                System.out.println(arg + " is a known spammer.");
+            } else{
+                System.out.println(arg + " appears legitimate.");
+            }
+        }
+    }
+    private static boolean isSpammer(String arg) {
+        try {
+            InetAddress address = InetAddress.getByName(arg);
+            byte[] quad = address.getAddress();
+            String query = BLACKHOLE;
+            for(byte octet : quad){
+                int unsignedByte = octet < 0 ? octet + 256 : octet;
+                query = unsignedByte + "." + query;
+            }
+            InetAddress.getByName(query);
+            return true;
+        } catch (UnknownHostException e) {
+            return false;
+        }
+    }
+}
+```
+
+### Output
+
+```
+java SpamCheck 114.254.94.185
+114.254.94.185 is a known spammer.
 ```
 
 ## Lab 3
@@ -287,7 +330,7 @@ public class InterfaceLister {
 name:lo (lo)
 ```
 
-## Lab 12
+## Lab 9
 
 ### Source Code
 
@@ -329,7 +372,7 @@ Enter an IP address: abcd:0000:1234:5678:90ab:cdef:ffff:9876
 abcd:0000:1234:5678:90ab:cdef:ffff:9876 is an IPv6 address.
 ```
 
-## Lab 13
+## Lab 10
 
 ### Source Code
 
@@ -447,4 +490,48 @@ nccs.edu.np is a multicast address: false
 nccs.edu.np is a globally scoped multicast address: false
 nccs.edu.np is reachable: false
 Hash code for nccs.edu.np: -658331956z
+```
+
+## Lab 11
+
+### Source Code
+
+```java
+import java.net.*;
+// import java.io.*;
+
+public class HTTPHeader {
+    public static void main(String[] args) {
+        try {
+            URL url = new URL("https://kabirdeula.info.np/");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            for (int i = 1; ; i++) {
+                String headerName = connection.getHeaderFieldKey(i);
+                String headerValue = connection.getHeaderField(i);
+                if (headerName == null && headerValue == null) {
+                    break;
+                }
+                System.out.println(headerName + ": " + headerValue);
+            }
+            connection.disconnect();
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+    }    
+}
+```
+
+### Output
+
+```
+Accept-Ranges: bytes
+Age: 2
+Cache-Control: public, max-age=0, must-revalidate
+Content-Length: 16974
+Content-Type: text/html; charset=UTF-8
+Date: Tue, 11 Apr 2023 12:36:54 GMT
+Etag: "2badc71ffb96b61af9df3563b2b9f2f8-ssl"
+Server: Netlify
+Strict-Transport-Security: max-age=31536000
+X-Nf-Request-Id: 01GXR53C2FYT5A5V32SR112P9D
 ```
