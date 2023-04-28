@@ -1,34 +1,34 @@
 # Lab 
 
-|  S.N. |                                                                                           Topic                                                                                           |  Date  | Status |
-| :---: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :----- |
-| 1.    | [Looking up internet address of localhost.](#lab-1)                                                                                                                                       |        | Done   |
-| 2.    | [Implement the program whether the host is a spammer or not.](#lab-2)                                                                                                                     |        | ToDo   |
-| 3.    | [Implementation of port scanner.](#lab-3)                                                                                                                                                 |        | Done   |
-| 4.    | [Implementing parts of URL.](#lab-4)                                                                                                                                                      |        | Done   |
-| 5.    | [Encoding and Decoding URI.](#lab-5)                                                                                                                                                      |        | ToDo   |
-| 6.    | [Retrieving data from URI.](#lab-6)                                                                                                                                                       |        | ToDo   |
-| 7.    | [Implementation of ping programming. (Testing Reachability is Reachable.)](#lab-7)                                                                                                        |        | Done   |
-| 8.    | [Implementing a list of all network interfaces on the localhost.](#lab-8)                                                                                                                 |        | Done   |
-| 9.    | [Determining whether an IP address is IPv4 or IPv6.](#lab-9)                                                                                                                              |        | ToDo   |
-| 10.   | [Implmenting the characteristics of an IP address.](#lab-10)                                                                                                                              |        | ToDo   |
-| 11.   | [Develop a program to print the HTTP header.](#lab-11)                                                                                                                                    |        | ToDo   |
-| 12.   | Implementation of Client Server Communication using UDP.                                                                                                                                  |        | ToDo   |
-| 13.   | Implementation of Client Server Communication using TCP.                                                                                                                                  |        | ToDo   |
-| 14.   | Java multicast programming.                                                                                                                                                               |        | ToDo   |
-| 15.   | Implementation of Authenticator Class.                                                                                                                                                    |        | ToDo   |
-| 16.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                |        | ToDo   |
-| 17.   | Getting information about a Socket.                                                                                                                                                       |        | ToDo   |
-| 18.   | Getting information about a ServerSocket.                                                                                                                                                 |        | ToDo   |
-| 19.   | Implementation of Whois Server.                                                                                                                                                           |        | ToDo   |
-| 20.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                  |        | ToDo   |
-| 21.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                 |        | ToDo   |
-| 22.   | Implementing the name of multicast group.                                                                                                                                                 |        | ToDo   |
-| 23.   | Implementing RMI Service Interface.                                                                                                                                                       |        | ToDo   |
-| 24.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                |        | ToDo   |
-| 25.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                            |        | ToDo   |
-| 26.   | Develop a program to create a UDP server and client in which the server provides factorial calculation service whereas the client simply requests to calculate the factorial of a number. |        | ToDo   |
-| 27.   | Program to show any cookie information stored in your system.                                                                                                                             |        | ToDo   |
+|  S.N. |                                                                                           Topic                                                                                                      |  Date  | Status |
+| :---: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :----- |
+| 1.    | [Looking up internet address of localhost.](#lab-1)                                                                                                                                                  |        | Done   |
+| 2.    | [Implement the program whether the host is a spammer or not.](#lab-2)                                                                                                                                |        | Done   |
+| 3.    | [Implementation of port scanner.](#lab-3)                                                                                                                                                            |        | Done   |
+| 4.    | [Implementing parts of URL.](#lab-4)                                                                                                                                                                 |        | Done   |
+| 5.    | [Encoding and Decoding URI.](#lab-5)                                                                                                                                                                 |        | Done   |
+| 6.    | [Retrieving data from URI.](#lab-6)                                                                                                                                                                  |        | Done   |
+| 7.    | [Implementation of ping programming. (Testing Reachability is Reachable.)](#lab-7)                                                                                                                   |        | Done   |
+| 8.    | [Implementing a list of all network interfaces on the localhost.](#lab-8)                                                                                                                            |        | Done   |
+| 9.    | [Determining whether an IP address is IPv4 or IPv6.](#lab-9)                                                                                                                                         |        | Done   |
+| 10.   | [Implmenting the characteristics of an IP address.](#lab-10)                                                                                                                                         |        | Done   |
+| 11.   | [Develop a program to print the HTTP header.](#lab-11)                                                                                                                                               |        | Done   |
+| 12.   | [Develop a program to create a TCP server and client in which the server provides factorial calculation service whereas the client simply requests to calculate the factorial of a number.](#lab-12) |        | ToDo   |
+| 13.   | Implementation of Client Server Communication using UDP.                                                                                                                                             |        | ToDo   |
+| 14.   | Implementation of Client Server Communication using TCP.                                                                                                                                             |        | ToDo   |
+| 15.   | Java multicast programming.                                                                                                                                                                          |        | ToDo   |
+| 16.   | Implementation of Authenticator Class.                                                                                                                                                               |        | ToDo   |
+| 17.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                           |        | ToDo   |
+| 18.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
+| 19.   | Getting information about a ServerSocket.                                                                                                                                                            |        | ToDo   |
+| 20.   | Implementation of Whois Server.                                                                                                                                                                      |        | ToDo   |
+| 21.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             |        | ToDo   |
+| 22.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                            |        | ToDo   |
+| 23.   | Implementing the name of multicast group.                                                                                                                                                            |        | ToDo   |
+| 24.   | Implementing RMI Service Interface.                                                                                                                                                                  |        | ToDo   |
+| 25.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           |        | ToDo   |
+| 26.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       |        | ToDo   |
+| 27.   | Program to show any cookie information stored in your system.                                                                                                                                        |        | ToDo   |
 
 ## Lab 1
 
@@ -534,4 +534,149 @@ Etag: "2badc71ffb96b61af9df3563b2b9f2f8-ssl"
 Server: Netlify
 Strict-Transport-Security: max-age=31536000
 X-Nf-Request-Id: 01GXR53C2FYT5A5V32SR112P9D
+```
+
+## Lab 12
+
+### Source Code
+
+#### Server
+
+```java
+import java.io.*;
+import java.net.*;
+
+class Server{
+    public static void main(String[] args) {
+        try{
+            int port = 8001;
+
+            // Creating a server
+            ServerSocket server = new ServerSocket(port);
+            
+            // getting ip address of the server
+            InetAddress address = InetAddress.getLocalHost();
+
+            System.out.println("Waiting for connection" + "\nHost IP: " + address.getHostAddress() + "\nPort: " + port);
+
+            // Accepting client connection    
+            Socket socket = server.accept();
+
+            System.out.println("Connection type: TCP\n" + "Connection Established");
+
+            // Creating input/output stream for writing data to client or reading the data from client.
+            PrintStream printStream = new PrintStream(socket.getOutputStream());
+
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+            BufferedReader bufferedReader2 = new BufferedReader(new InputStreamReader(System.in));
+
+            while (true) {
+                String strRequest, strResponse = null;
+
+                while ((strRequest = bufferedReader.readLine()) != null) {
+                    System.out.println("Client :: " + strRequest);
+                    if (strRequest.startsWith("/")) {
+                        // custom commands
+                        if (strRequest.startsWith("/fact")) {
+                            int num = Integer.parseInt(strRequest.split(" ", 2)[1]);
+                            int fact = 1;
+                            for (int i = 1; i <= num; i++) {
+                                fact *= i;
+                            }
+
+                            strResponse = "Factorial of " + num + " is " + fact;
+                        }
+                    }else{
+                        System.out.println("Server :: ");
+                        strResponse = bufferedReader2.readLine();
+                    }
+                    printStream.println(strResponse);
+                }
+                printStream.close();
+                bufferedReader.close();
+                bufferedReader2.close();
+                server.close();
+                socket.close();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+#### Client
+
+```java
+import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+class Client {
+    public static void main(String[] args) {
+        try {
+            try (
+                // Reading Host IP address and port given by the user.
+            Scanner scanner = new Scanner(System.in)) {
+                System.out.print("Enter host address: ");
+                String host = scanner.nextLine();
+                System.out.print("Enter port address: ");
+                int port = Integer.parseInt(scanner.nextLine());
+
+                // Connecting to socket using host and port provided by user.
+                Socket socket = new Socket(host, port);
+                System.out.println("Connection to server accepted.");
+
+                // I/o stream to read and write data
+                DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                BufferedReader bufferedReader2 = new BufferedReader(new InputStreamReader(System.in));
+
+                String strRequest, strResponse;
+                System.out.println("/'quit/' to exit");
+                while (!(strRequest = bufferedReader2.readLine()).equals("quit")) {
+                    // dataOutputStream to write to the server.
+                    dataOutputStream.writeBytes(strRequest + "\n");
+                    strResponse = bufferedReader.readLine();
+                    System.out.print("Server: " + strResponse);
+                    System.out.print("Client: ");
+                }
+                dataOutputStream.close();
+                bufferedReader.close();
+                bufferedReader2.close();
+                socket.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+```
+
+### Output
+
+Server Side
+```
+Waiting for connection
+Host IP: 127.0.1.1
+Port: 8001
+Connection type: TCP
+Connection Established
+Client: accessing server
+Server: server accessed
+```
+
+Client Side
+```
+Enter host address: 127.0.1.1
+Enter port address: 8001
+Connection to server accepted.
+'quit' to exit
+accessing server
+Server: server accessed
+Client: /fact 7
+Server: Factorial of 7 is 5040
+Client: quit
 ```

@@ -4,7 +4,7 @@ import java.net.*;
 class Server{
     public static void main(String[] args) {
         try{
-            int port = 7001;
+            int port = 8001;
 
             // Creating a server
             ServerSocket server = new ServerSocket(port);
@@ -30,14 +30,20 @@ class Server{
                 String strRequest, strResponse = null;
 
                 while ((strRequest = bufferedReader.readLine()) != null) {
-                    System.out.println("Client :: " + strRequest);
+                    System.out.print("Client: " + strRequest);
                     if (strRequest.startsWith("/")) {
                         // custom commands
-                        if (strRequest.startsWith("/hello")) {
-                            System.out.println("Hello World!!");
+                        if (strRequest.startsWith("/fact")) {
+                            int num = Integer.parseInt(strRequest.split(" ", 2)[1]);
+                            int fact = 1;
+                            for (int i = 1; i <= num; i++) {
+                                fact *= i;
+                            }
+
+                            strResponse = "Factorial of " + num + " is " + fact;
                         }
                     }else{
-                        System.out.println("Server :: ");
+                        System.out.print("\nServer: ");
                         strResponse = bufferedReader2.readLine();
                     }
                     printStream.println(strResponse);

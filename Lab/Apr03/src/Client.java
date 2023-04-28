@@ -8,9 +8,9 @@ class Client {
             try (
                 // Reading Host IP address and port given by the user.
             Scanner scanner = new Scanner(System.in)) {
-                System.out.println("Enter host address: ");
+                System.out.print("Enter host address: ");
                 String host = scanner.nextLine();
-                System.out.println("Enter port address: ");
+                System.out.print("Enter port address: ");
                 int port = Integer.parseInt(scanner.nextLine());
 
                 // Connecting to socket using host and port provided by user.
@@ -23,13 +23,13 @@ class Client {
                 BufferedReader bufferedReader2 = new BufferedReader(new InputStreamReader(System.in));
 
                 String strRequest, strResponse;
-                System.out.println("/'quit/' to exit");
+                System.out.println("'quit' to exit");
                 while (!(strRequest = bufferedReader2.readLine()).equals("quit")) {
                     // dataOutputStream to write to the server.
                     dataOutputStream.writeBytes(strRequest + "\n");
                     strResponse = bufferedReader.readLine();
-                    System.out.println("Server: " + strResponse);
-                    System.out.println("Client: ");
+                    System.out.print("Server: " + strResponse);
+                    System.out.print("\nClient: ");
                 }
                 dataOutputStream.close();
                 bufferedReader.close();
