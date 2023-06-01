@@ -155,7 +155,7 @@
 
 <b>Remote Method Invocation (RMI): [2 LH]</b>
 
-    12.1 Detining and lmplementing RMI Service Intertace
+    12.1 Defining and lmplementing RMI Service Intertace
     12.2 Creating an RMI Server and Client
     12.3 Running the RMI System
 </p>
