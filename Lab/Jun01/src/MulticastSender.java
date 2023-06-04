@@ -12,7 +12,7 @@ public class MulticastSender {
             // Create a datagram socket
             DatagramSocket socket = new DatagramSocket();
 
-            System.out.println("Multicast Sender Started.\nEnter messages to send.\nEnter 'exit' to quit");
+            System.out.println("Kabir Deula Multicast Server Started.\nEnter messages to send.\nEnter 'exit' to quit");
 
             while (true) {
                 // Read input from the user

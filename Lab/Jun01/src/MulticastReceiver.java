@@ -10,28 +10,28 @@ public class MulticastReceiver {
             InetAddress groupAddress = InetAddress.getByName("224.0.0.1");
             int port = 8888;
 
-            // Create a multicast socket
-            MulticastSocket socket = new MulticastSocket(port);
-            
-            // Join the multicast group
-            socket.joinGroup(groupAddress);
+            try (// Create a multicast socket
+            MulticastSocket socket = new MulticastSocket(port)) {
+                // Join the multicast group
+                socket.joinGroup(groupAddress);
 
-            System.out.println("Multicast Receiver Started. Listening for messages...");
+                System.out.println("Multicast Receiver Started. Listening for messages...");
 
-            while (true) {
-                byte[] buffer = new byte[1024];
+                while (true) {
+                    byte[] buffer = new byte[1024];
 
-                // Create a datagram packet for receiving data.
-                DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-                
-                // Receive the data
-                socket.receive(packet);
+                    // Create a datagram packet for receiving data.
+                    DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+                    
+                    // Receive the data
+                    socket.receive(packet);
 
-                // Convert the received data to a string
-                String messageString = new String(packet.getData(), 0, packet.getLength());
-                
-                // Display the received message
-                System.out.println("Received message: " + messageString);
+                    // Convert the received data to a string
+                    String messageString = new String(packet.getData(), 0, packet.getLength());
+                    
+                    // Display the received message
+                    System.out.println("Received message: " + messageString);
+                }
             }
         }catch(IOException e){
             e.printStackTrace();
