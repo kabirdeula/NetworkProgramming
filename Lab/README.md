@@ -15,17 +15,17 @@
 | 11.   | [Develop a program to print the HTTP header.](#lab-11)                                                                                                                                               |        | Done   |
 | 12.   | [Develop a program to create a TCP server and client in which the server provides factorial calculation service whereas the client simply requests to calculate the factorial of a number.](#lab-12) |        | ToDo   |
 | 13.   | [Java multicast programming.](#lab-13)                                                                                                                                                               |        | ToDo   |
-| 14.   | Implementation of Client Server Communication using UDP.                                                                                                                                             |        | ToDo   |
-| 15.   | Implementation of Client Server Communication using TCP.                                                                                                                                             |        | ToDo   |
-| 16.   | Implementation of Authenticator Class.                                                                                                                                                               |        | ToDo   |
-| 17.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                           |        | ToDo   |
-| 18.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
-| 19.   | Getting information about a ServerSocket.                                                                                                                                                            |        | ToDo   |
-| 20.   | Implementation of Whois Server.                                                                                                                                                                      |        | ToDo   |
-| 21.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             |        | ToDo   |
-| 22.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                            |        | ToDo   |
-| 23.   | Implementing the name of multicast group.                                                                                                                                                            |        | ToDo   |
-| 24.   | Implementing RMI Service Interface.                                                                                                                                                                  |        | ToDo   |
+| 14.   | [Implementing RMI Service Interface.](#lab-14)                                                                                                                                                                  |        | ToDo   |
+| 15.   | Implementation of Client Server Communication using UDP.                                                                                                                                             |        | ToDo   |
+| 16.   | Implementation of Client Server Communication using TCP.                                                                                                                                             |        | ToDo   |
+| 17.   | Implementation of Authenticator Class.                                                                                                                                                               |        | ToDo   |
+| 18.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                           |        | ToDo   |
+| 19.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
+| 20.   | Getting information about a ServerSocket.                                                                                                                                                            |        | ToDo   |
+| 21.   | Implementation of Whois Server.                                                                                                                                                                      |        | ToDo   |
+| 22.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             |        | ToDo   |
+| 23.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                            |        | ToDo   |
+| 24.   | Implementing the name of multicast group.                                                                                                                                                            |        | ToDo   |
 | 25.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           |        | ToDo   |
 | 26.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       |        | ToDo   |
 | 27.   | Program to show any cookie information stored in your system.                                                                                                                                        |        | ToDo   |
@@ -701,7 +701,7 @@ public class MulticastReceiver{
             int port = 8888;
 
             // Create a multicast group
-            Multicast socket = new MulticastSocket(port);
+            MulticastSocket socket = new MulticastSocket(port);
             
             // Join the multicast group
             socket.joinGroup(group);
@@ -804,4 +804,75 @@ Enter 'exit' to quit
 Message sent: Hello World!
 Message sent: Bye World!
 Message sent: exit
+```
+
+## Lab 14
+
+### Source Code
+
+#### My Service
+
+```java
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface MyService extends Remote {
+    public String sayHello(String name) throws RemoteException;
+}
+```
+
+#### My Service Implementation
+
+```java
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class MyServiceImplementation extends UnicastRemoteObject implements MyService{
+    public MyServiceImplementation() throws RemoteException{
+        super();
+    }
+
+    public String sayHello(String name) throws RemoteException{
+        return "Hello, " + name + "!";
+    }
+}
+```
+
+#### RMI Server
+
+```java
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class RMIServer {
+    
+    public static void main(String[] args) throws Exception{
+        MyService myService = new MyServiceImplementation();
+        Registry registry = LocateRegistry.createRegistry(1080);
+        registry.bind("MyService", myService);
+        System.out.println("Server is running...");
+    }
+}
+```
+
+#### RMIClient
+
+```java
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class RMIClient {
+    public static void main(String[] args) throws Exception{
+        Registry registry = LocateRegistry.getRegistry("localhost", 1080);
+        MyService myService = (MyService) registry.lookup("MyService");
+        String result = myService.sayHello("Kabir");
+        System.out.println(result);
+    }
+}
+```
+
+### Output
+
+```
+Hello, Kabir!
 ```
