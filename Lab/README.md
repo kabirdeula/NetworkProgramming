@@ -728,6 +728,11 @@ Server: Factorial of 7 is 5040
 Client: quit
 ```
 
+[Go to Top](#lab)
+
+[Main File](/Lab/20230403/)
+
+
 ## Lab 13
 
 ### Source Code
