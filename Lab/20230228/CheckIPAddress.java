@@ -1,7 +1,7 @@
 import java.net.*;
 import java.util.Scanner;
 
-public class CheckIP {
+public class CheckIPAddress {
     public static void main(String[] args) {
         try {
             // Prompt the user to enter an IP address
