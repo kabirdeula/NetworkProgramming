@@ -14,7 +14,7 @@ public class PortScanner {
                     socket.connect(new InetSocketAddress(inetAddress, port), 1000);
                     System.out.println("Port " + port + " is open");
                 } catch (Exception e) {
-                    // System.out.println("Connection is closed.");
+                    System.out.println("Connection is closed.");
                 }
             }
         } catch (UnknownHostException e) {

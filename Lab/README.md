@@ -57,6 +57,10 @@ public class getOwnIP{
 IP of this system: 10.1.60.11
 ```
 
+[Go to Top](#lab)
+
+[Main File](/Lab/20230322/GetOwnIP.java)
+
 ## Lab 2
 
 ### Source Code
@@ -99,6 +103,10 @@ public class SpamCheck {
 java SpamCheck 114.254.94.185
 114.254.94.185 is a known spammer.
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230302/SpamCheck.java)
 
 ## Lab 3
 
@@ -145,6 +153,10 @@ Port 58888 is open
 Port 59806 is open
 ```
 
+[Go to Top](#lab)
+
+[Main File](/Lab/20230322/PortScanner.java)
+
 ## Lab 4
 
 ### Source Code
@@ -186,6 +198,10 @@ Authority: www.tutorialspoint.com
 Query: null
 Default Port: 443
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230313/URLinfo.java)
 
 ## Lab 5
 
@@ -237,6 +253,10 @@ Encoded URI: www.facebook.com%2Fprofile%3Fkabirdeula%3D1
 Decoded URI: www.facebook.com/profile?kabirdeula=1
 ```
 
+[Go to Top](#lab)
+
+[Main File](/Lab/20230317/URIDemo.java)
+
 ## Lab 6
 
 ### Source Code
@@ -274,6 +294,10 @@ public class URIData {
 ```
 {"anime":"Noragami","character":"Bishamonten","quote":"If you hurt me, then so be it. Do you think that there is any human in all the world who has never hurt another? You are all so kind...It hurts you to hurt others. That is why I had been hiding my pain, as well."}
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230317/URIData.java)
 
 ## Lab 7
 
@@ -327,8 +351,15 @@ public class InterfaceLister {
 ### Output
 
 ```
+name:br-971a1b0bc169 (br-971a1b0bc169)
+name:docker0 (docker0)
+name:wlp2s0 (wlp2s0)
 name:lo (lo)
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230301/InterfaceLister.java)
 
 ## Lab 9
 
@@ -371,6 +402,10 @@ Enter an IP address: 192.168.1.1
 Enter an IP address: abcd:0000:1234:5678:90ab:cdef:ffff:9876
 abcd:0000:1234:5678:90ab:cdef:ffff:9876 is an IPv6 address.
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230228/CheckIPAddress.java)
 
 ## Lab 10
 
@@ -492,6 +527,10 @@ nccs.edu.np is reachable: false
 Hash code for nccs.edu.np: -658331956z
 ```
 
+[Go to Top](#lab)
+
+[Main File](/Lab/20230228/MyInetAddress.java)
+
 ## Lab 11
 
 ### Source Code
@@ -535,6 +574,10 @@ Server: Netlify
 Strict-Transport-Security: max-age=31536000
 X-Nf-Request-Id: 01GXR53C2FYT5A5V32SR112P9D
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230326/HTTPHeader.java)
 
 ## Lab 12
 

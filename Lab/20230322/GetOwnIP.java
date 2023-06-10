@@ -1,6 +1,6 @@
 import java.net.*;
 
-public class getOwnIP{
+public class GetOwnIP{
     public static void main(String[] args) throws UnknownHostException{
         try {
             InetAddress IPO = InetAddress.getLocalHost();

@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class WebRequest {
     public static void main(String[] args) throws IOException{
-        try (// String url = "https://animechan.vercel.app/api/random";
-                // String url = "https://kabirdeula.info.np";
+        try (
         Scanner scan = new Scanner(System.in)) {
             System.out.print("Enter the URL: ");
             String url = scan.next();
