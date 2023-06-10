@@ -732,7 +732,6 @@ Client: quit
 
 [Main File](/Lab/20230403/)
 
-
 ## Lab 13
 
 ### Source Code
@@ -858,6 +857,10 @@ Message sent: Bye World!
 Message sent: exit
 ```
 
+[Go to Top](#lab)
+
+[Main File](/Lab/20230601/)
+
 ## Lab 14
 
 ### Source Code
@@ -928,3 +931,7 @@ public class RMIClient {
 ```
 Hello, Kabir!
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230603/)
