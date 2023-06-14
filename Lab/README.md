@@ -19,8 +19,8 @@
 | 15.   | [Implementation of Authenticator Class.](#lab-15)                                                                                                                                                    |        | ToDo   |
 | 16.   | [Implementation of Client Server Communication using UDP.](#lab-16)                                                                                                                                  |        | ToDo   |
 | 17.   | [Implementation of Proxy Class and The ProxySelector Class.](#lab-17)                                                                                                                                |        | ToDo   |
-| 18.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
-| 19.   | Getting information about a ServerSocket.                                                                                                                                                            |        | ToDo   |
+| 18.   | [Getting information about a Socket.](#lab-18)                                                                                                                                                              |        | ToDo   |
+| 19.   | [Getting information about a ServerSocket.](#lab-19)                                                                                                                                                       |        | ToDo   |
 | 20.   | Implementation of Whois Server.                                                                                                                                                                      |        | ToDo   |
 | 21.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             |        | ToDo   |
 | 22.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                            |        | ToDo   |
@@ -1205,3 +1205,40 @@ Local Socket Address: /127.0.0.1:43800
 Port: 80
 Local Port: 43800
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230614/SocketInfo.java)
+
+## Lab 19
+
+### Source Code
+
+```java
+import java.net.InetAddress;
+import java.net.ServerSocket;
+
+public class ServerSocketInfo {
+    public static void main(String[] args) {
+        try {
+            ServerSocket serverSocket = new ServerSocket(3310);
+
+            System.out.println("Local Address: " + serverSocket.getInetAddress());
+            System.out.println("Local Port: " + serverSocket.getLocalPort());
+        } catch (Exception e) {
+            System.err.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
+```
+
+### Output
+
+```
+Local Address: 0.0.0.0/0.0.0.0
+Local Port: 3310
+```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230614/ServerSocketInfo.java)
