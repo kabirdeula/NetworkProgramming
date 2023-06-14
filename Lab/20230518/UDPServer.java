@@ -2,24 +2,33 @@ import java.net.*;
 
 public class UDPServer {
     public static void main(String[] args) throws Exception {
-        try (DatagramSocket serverSocket = new DatagramSocket(9876)) {
-            byte[] receiveData = new byte[1024];
-            byte[] sendData;
+        try {
+            try (DatagramSocket serverSocket = new DatagramSocket(9876)) {
+                byte[] receiveData = new byte[1024];
+                while (true) {
+                    DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                    serverSocket.receive(receivePacket);
 
-            while (true) {
-                DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-                serverSocket.receive(receivePacket);
+                    String receivedMessage = new String(receivePacket.getData(), 0, receivePacket.getLength());
+                    System.out.println("Received from client: " + receivedMessage);
 
-                String sentence = new String(receivePacket.getData());
-                InetAddress iPAddress = receivePacket.getAddress();
-                int port = receivePacket.getPort();
+                    String responseMessage = "Response from server: " + receivedMessage;
+                    byte[] sendData = responseMessage.getBytes();
 
-                String capitalizedSentence = sentence.toUpperCase();
-                sendData = capitalizedSentence.getBytes();
+                    InetAddress clientAddress = receivePacket.getAddress();
+                    int clientPort = receivePacket.getPort();
 
-                DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, iPAddress, port);
-                serverSocket.send(sendPacket);
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
+
+                    serverSocket.send(sendPacket);
+
+                    receiveData = new byte[1024];
+                }
             }
+        } catch (SocketException e) {
+            System.err.println("Server is shutting down...");
+        } catch (Exception e) {
+            System.err.println("An error occured in the server: " + e.getMessage());
         }
     }
 }

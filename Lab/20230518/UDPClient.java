@@ -1,28 +1,39 @@
-import java.io.*;
+// import java.io.*;
 import java.net.*;
+import java.util.Scanner;
 
 public class UDPClient {
     public static void main(String[] args) throws Exception {
-        BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
-        DatagramSocket clientSocket = new DatagramSocket();
+        try {
+            try (DatagramSocket clientSocket = new DatagramSocket()) {
+                InetAddress serverAddress = InetAddress.getByName("localhost");
+                int serverPort = 9876;
 
-        InetAddress IPAddress = InetAddress.getByName("localhost");
-        byte[] sendData;
-        byte[] receiveData = new byte[1024];
+                try (Scanner scanner = new Scanner(System.in)) {
+                    System.out.println("'quit' to exit.");
 
-        String sentence = inFromUser.readLine();
-        sendData = sentence.getBytes();
+                    while (true) {
+                        System.out.print("Enter a message: ");
+                        String message = scanner.nextLine();
+                        byte[] sendData = message.getBytes();
 
-        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
-        clientSocket.send(sendPacket);
+                         if (message.equalsIgnoreCase("quit")) {
+                            System.out.println("Client exiting...");
+                            break;
+                        }
 
-        DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-        clientSocket.receive(receivePacket);
+                        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, serverAddress, serverPort);
+                        clientSocket.send(sendPacket);
 
-        String modifiedSentence = new String(receivePacket.getData());
-        System.out.println("FROM SERVER: " + modifiedSentence);
+                        byte[] receiveData = new byte[1024];
+                        DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                        clientSocket.receive(receivePacket);
 
-        clientSocket.close();
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("An error occured in the client: " + e.getMessage());
+        }
     }
-
 }

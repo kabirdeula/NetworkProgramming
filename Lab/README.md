@@ -15,9 +15,9 @@
 | 11.   | [Develop a program to print the HTTP header.](#lab-11)                                                                                                                                               |        | Done   |
 | 12.   | [Develop a program to create a TCP server and client in which the server provides factorial calculation service whereas the client simply requests to calculate the factorial of a number.](#lab-12) |        | ToDo   |
 | 13.   | [Java multicast programming.](#lab-13)                                                                                                                                                               |        | ToDo   |
-| 14.   | [Implementing RMI Service Interface.](#lab-14)                                                                                                                                                                  |        | ToDo   |
-| 15.   | [Implementation of Authenticator Class.](#lab-15)                                                                                                                                                               |        | ToDo   |
-| 16.   | Implementation of Client Server Communication using UDP.                                                                                                                                             |        | ToDo   |
+| 14.   | [Implementing RMI Service Interface.](#lab-14)                                                                                                                                                       |        | ToDo   |
+| 15.   | [Implementation of Authenticator Class.](#lab-15)                                                                                                                                                    |        | ToDo   |
+| 16.   | [Implementation of Client Server Communication using UDP.](#lab-16)                                                                                                                                  |        | ToDo   |
 | 17.   | Implementation of Client Server Communication using TCP.                                                                                                                                             |        | ToDo   |
 | 18.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                           |        | ToDo   |
 | 19.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
@@ -936,7 +936,7 @@ Hello, Kabir!
 
 [Main File](/Lab/20230603/)
 
-## Lab 14
+## Lab 15
 
 ### Source Code
 
@@ -1000,3 +1000,112 @@ HTML Code
 [Go to Top](#lab)
 
 [Main File](/Lab/20230611/AuthenticatorClassDemo.java)
+
+## Lab 16
+
+### Source Code
+
+#### UDP Server
+
+```java
+import java.net.*;
+
+public class UDPServer {
+    public static void main(String[] args) throws Exception {
+        try {
+            try (DatagramSocket serverSocket = new DatagramSocket(9876)) {
+                byte[] receiveData = new byte[1024];
+                while (true) {
+                    DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                    serverSocket.receive(receivePacket);
+
+                    String receivedMessage = new String(receivePacket.getData(), 0, receivePacket.getLength());
+                    System.out.println("Received from client: " + receivedMessage);
+
+                    String responseMessage = "Response from server: " + receivedMessage;
+                    byte[] sendData = responseMessage.getBytes();
+
+                    InetAddress clientAddress = receivePacket.getAddress();
+                    int clientPort = receivePacket.getPort();
+
+                    DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, clientAddress, clientPort);
+
+                    serverSocket.send(sendPacket);
+
+                    receiveData = new byte[1024];
+                }
+            }
+        } catch (SocketException e) {
+            System.err.println("Server is shutting down...");
+        } catch (Exception e) {
+            System.err.println("An error occured in the server: " + e.getMessage());
+        }
+    }
+}
+```
+
+#### UDP Client
+
+```java
+// import java.io.*;
+import java.net.*;
+import java.util.Scanner;
+
+public class UDPClient {
+    public static void main(String[] args) throws Exception {
+        try {
+            try (DatagramSocket clientSocket = new DatagramSocket()) {
+                InetAddress serverAddress = InetAddress.getByName("localhost");
+                int serverPort = 9876;
+
+                try (Scanner scanner = new Scanner(System.in)) {
+                    System.out.println("'quit' to exit.");
+
+                    while (true) {
+                        System.out.print("Enter a message: ");
+                        String message = scanner.nextLine();
+                        byte[] sendData = message.getBytes();
+
+                         if (message.equalsIgnoreCase("quit")) {
+                            System.out.println("Client exiting...");
+                            break;
+                        }
+
+                        DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, serverAddress, serverPort);
+                        clientSocket.send(sendPacket);
+
+                        byte[] receiveData = new byte[1024];
+                        DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+                        clientSocket.receive(receivePacket);
+
+                    }
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("An error occured in the client: " + e.getMessage());
+        }
+    }
+}
+```
+
+### Output
+
+Server
+
+```
+Received from client: Hello World!
+Received from client: Bye World!
+```
+
+Sender
+```
+'quit' to exit.
+Enter a message: Hello World!
+Enter a message: Bye World!
+Enter a message: quit
+Client exiting...
+```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230518/)
