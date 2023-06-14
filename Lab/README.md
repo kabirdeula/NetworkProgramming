@@ -1171,3 +1171,37 @@ Response Code: 200
 [Go to Top](#lab)
 
 [Main File](/Lab/20230614/ProxySelectorDemo.java)
+
+## Lab 18
+
+### Source Code
+
+```java
+import java.io.IOException;
+import java.net.Socket;
+
+public class SocketInfo {
+    public static void main(String[] args) throws IOException{
+        
+        Socket socket = new Socket("localhost", 80);
+        
+        System.out.println("Connected to: " + socket.getInetAddress());
+        System.out.println("Local Address: " + socket.getLocalAddress());
+        System.out.println("Local Socket Address: " + socket.getLocalSocketAddress());
+
+        System.out.println("Port: " + socket.getPort());
+        System.out.println("Local Port: " + socket.getLocalPort());
+        
+    }
+}
+```
+
+### Output
+
+```
+Connected to: localhost/127.0.0.1
+Local Address: /127.0.0.1
+Local Socket Address: /127.0.0.1:43800
+Port: 80
+Local Port: 43800
+```
