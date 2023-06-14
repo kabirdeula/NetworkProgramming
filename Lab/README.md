@@ -16,9 +16,9 @@
 | 12.   | [Develop a program to create a TCP server and client in which the server provides factorial calculation service whereas the client simply requests to calculate the factorial of a number.](#lab-12) |        | ToDo   |
 | 13.   | [Java multicast programming.](#lab-13)                                                                                                                                                               |        | ToDo   |
 | 14.   | [Implementing RMI Service Interface.](#lab-14)                                                                                                                                                                  |        | ToDo   |
-| 15.   | Implementation of Client Server Communication using UDP.                                                                                                                                             |        | ToDo   |
-| 16.   | Implementation of Client Server Communication using TCP.                                                                                                                                             |        | ToDo   |
-| 17.   | Implementation of Authenticator Class.                                                                                                                                                               |        | ToDo   |
+| 15.   | [Implementation of Authenticator Class.](#lab-15)                                                                                                                                                               |        | ToDo   |
+| 16.   | Implementation of Client Server Communication using UDP.                                                                                                                                             |        | ToDo   |
+| 17.   | Implementation of Client Server Communication using TCP.                                                                                                                                             |        | ToDo   |
 | 18.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                           |        | ToDo   |
 | 19.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
 | 20.   | Getting information about a ServerSocket.                                                                                                                                                            |        | ToDo   |
@@ -935,3 +935,68 @@ Hello, Kabir!
 [Go to Top](#lab)
 
 [Main File](/Lab/20230603/)
+
+## Lab 14
+
+### Source Code
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.Authenticator;
+import java.net.MalformedURLException;
+import java.net.PasswordAuthentication;
+import java.net.URL;
+
+public class AuthenticatorClassDemo{
+    public static void main(String[] args) {
+        try {
+            ClassAuthenticator obj1 = new ClassAuthenticator();
+            Authenticator.setDefault(new ClassAuthenticator());
+
+            URL url = new URL("http://192.168.1.72:8000/login");
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line;
+            System.out.println("Host using url.getHost:: "+url.getHost());
+            obj1.getPasswordAuthentication();
+            while ((line = in.readLine()) != null) {
+                System.out.println(line);
+            }
+            in.close();
+        } catch (MalformedURLException e) {
+            System.out.println("Malformed URL: " + e.getMessage());
+        } catch (IOException e){
+            System.out.println("I/O Error: " + e.getMessage());
+        }
+    }
+
+    public static class ClassAuthenticator extends Authenticator{
+        protected PasswordAuthentication getPasswordAuthentication(){
+            this.show();
+            String username = "kabirdeula";
+            String password = "kabirdeula";
+            return new PasswordAuthentication(username, password.toCharArray());
+        }
+
+        void show(){
+            int hostname = getRequestingPort();
+            System.out.println("Port Requesting: " + hostname);
+        }
+    }
+}
+
+```
+
+### Output
+
+```
+Host using url.getHost:: 192.168.1.72
+Port Requesting: 0
+HTML Code
+```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230611/AuthenticatorClassDemo.java)
