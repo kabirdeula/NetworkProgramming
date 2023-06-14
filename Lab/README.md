@@ -18,17 +18,16 @@
 | 14.   | [Implementing RMI Service Interface.](#lab-14)                                                                                                                                                       |        | ToDo   |
 | 15.   | [Implementation of Authenticator Class.](#lab-15)                                                                                                                                                    |        | ToDo   |
 | 16.   | [Implementation of Client Server Communication using UDP.](#lab-16)                                                                                                                                  |        | ToDo   |
-| 17.   | Implementation of Client Server Communication using TCP.                                                                                                                                             |        | ToDo   |
-| 18.   | Implementation of Proxy Class and The ProxySelector CLass.                                                                                                                                           |        | ToDo   |
-| 19.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
-| 20.   | Getting information about a ServerSocket.                                                                                                                                                            |        | ToDo   |
-| 21.   | Implementation of Whois Server.                                                                                                                                                                      |        | ToDo   |
-| 22.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             |        | ToDo   |
-| 23.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                            |        | ToDo   |
-| 24.   | Implementing the name of multicast group.                                                                                                                                                            |        | ToDo   |
-| 25.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           |        | ToDo   |
-| 26.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       |        | ToDo   |
-| 27.   | Program to show any cookie information stored in your system.                                                                                                                                        |        | ToDo   |
+| 17.   | [Implementation of Proxy Class and The ProxySelector Class.](#lab-17)                                                                                                                                |        | ToDo   |
+| 18.   | Getting information about a Socket.                                                                                                                                                                  |        | ToDo   |
+| 19.   | Getting information about a ServerSocket.                                                                                                                                                            |        | ToDo   |
+| 20.   | Implementation of Whois Server.                                                                                                                                                                      |        | ToDo   |
+| 21.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             |        | ToDo   |
+| 22.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                            |        | ToDo   |
+| 23.   | Implementing the name of multicast group.                                                                                                                                                            |        | ToDo   |
+| 24.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           |        | ToDo   |
+| 25.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       |        | ToDo   |
+| 26.   | Program to show any cookie information stored in your system.                                                                                                                                        |        | ToDo   |
 
 ## Lab 1
 
@@ -1109,3 +1108,66 @@ Client exiting...
 [Go to Top](#lab)
 
 [Main File](/Lab/20230518/)
+
+## Lab 17
+
+### Source Code
+
+```java
+import java.io.IOException;
+import java.net.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ProxySelectorDemo {
+    public static void main(String[] args) {
+        // Set the default proxy for all connections
+        ProxySelector.setDefault(new CustomProxySelector());
+
+        try {
+            // Create a URL object
+            URL url = new URL("https://www.example.com");
+
+            // Open a connection using the URL
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Read the response
+            int responseCode = connection.getResponseCode();
+            System.out.println("Response Code: " + responseCode);
+
+            // Close the connection
+            connection.disconnect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static class CustomProxySelector extends ProxySelector {
+        @Override
+        public List<Proxy> select(URI uri) {
+            // Create a list to hold the available proxies
+            List<Proxy> proxies = new ArrayList<>();
+
+            proxies.add(Proxy.NO_PROXY);
+
+            return proxies;
+        }
+
+        @Override
+        public void connectFailed(URI uri, SocketAddress sa, IOException ioe) {
+            // Handle connection failures if needed
+            System.out.println("Failed to connect to the proxy.");
+        }
+    }
+}
+```
+
+### Output
+
+```
+Response Code: 200
+```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230614/ProxySelectorDemo.java)
