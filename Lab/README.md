@@ -21,12 +21,9 @@
 | 17.   | [Implementation of Proxy Class and The ProxySelector Class.](#lab-17)                                                                                                                                | 2023/05/12 | Done   |
 | 18.   | [Getting information about a Socket.](#lab-18)                                                                                                                                                       | 2023/05/12 | Done   |
 | 19.   | [Getting information about a ServerSocket.](#lab-19)                                                                                                                                                 | 2023/05/12 | Done   |
-| 20.   | [Implementation of Whois Server.](#lab-20)                                                                                                                                                           | 2023/06/02 | ToDo   |
-| 21.   | [Implementating ports on the local machine by using ServerSocket objects.](#lab-21)                                                                                                                  | 2023/06/02 | ToDo   |                                                                                                                       | 2023/06/02 | ToDo   |
-| 22.   | Implementing the name of multicast group.                                                                                                                                                            | 2023/06/09 | ToDo   |
-| 23.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           | 2023/06/09 | ToDo   |
-| 24.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       | 2023/06/09 | ToDo   |
-| 25.   | Program to show any cookie information stored in your system.                                                                                                                                        | 2023/06/09 | ToDo   |
+| 20.   | [Implementation of Whois Server.](#lab-20)                                                                                                                                                           | 2023/06/02 | Done   |
+| 21.   | [Implementating ports on the local machine by using ServerSocket objects.](#lab-21)                                                                                                                  | 2023/06/02 | Done   |                                                                                                                       | 2023/06/02 | ToDo   |
+| 22.   | [Program to show any cookie information stored in your system.](#lab-22)                                                                                                                             | 2023/06/09 | Done   |
 
 ## Lab 1
 
@@ -1401,3 +1398,77 @@ There is server port on: 1028
 [Go to Top](#lab)
 
 [Main File](/Lab/20230615/PortListener.java)
+
+## Lab 22
+
+### Source Code
+
+```java
+import java.net.CookieManager;
+import java.net.CookieStore;
+import java.net.HttpCookie;
+import java.util.List;
+
+public class CookieInformation {
+    public static void main(String[] args) {
+        try {
+            // Create a CookieManager
+            CookieManager cookieManager = new CookieManager();
+            // Set the CookieManager as the default CookieHandler
+            java.net.CookieHandler.setDefault(cookieManager);
+
+            // Perform an HTTP request to get cookies
+            // Replace this URL with the URL you want to fetch cookies from
+            java.net.URL url = new java.net.URL("https://www.facebook.com");
+            url.openConnection().getContent();
+
+            // Get the CookieStore from the CookieManager
+            CookieStore cookieStore = cookieManager.getCookieStore();
+
+            // Get the list of cookies
+            List<HttpCookie> cookies = cookieStore.getCookies();
+
+            // Display cookie information
+            System.out.println("Cookies stored in your system:");
+            for (HttpCookie cookie : cookies) {
+                System.out.println("Name: " + cookie.getName());
+                System.out.println("Value: " + cookie.getValue());
+                System.out.println("Domain: " + cookie.getDomain());
+                System.out.println("Path: " + cookie.getPath());
+                System.out.println("Secure: " + cookie.getSecure());
+                System.out.println("HTTP Only: " + cookie.isHttpOnly());
+                System.out.println("Max Age: " + cookie.getMaxAge());
+                System.out.println("---------------------------------");
+            }
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+}
+```
+
+### Output
+
+```
+Cookies stored in your system:
+Name: sb
+Value: edOKZNynzLRt9dL_0qoP7iYz
+Domain: .facebook.com
+Path: /
+Secure: true
+HTTP Only: true
+Max Age: 63071955
+---------------------------------
+Name: fr
+Value: 0ObaIAPGYp9LGuj8G..BkitN5.j-.AAA.0.0.BkitN5.AWXq-5mqYgE
+Domain: .facebook.com
+Path: /
+Secure: true
+HTTP Only: true
+Max Age: 7775954
+---------------------------------
+```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230615/CookieInformation.java)
