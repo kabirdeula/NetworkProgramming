@@ -1,33 +1,32 @@
 # Lab 
 
-|  S.N. |                                                                                           Topic                                                                                                      |  Date  | Status |
-| :---: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :----- |
-| 1.    | [Looking up internet address of localhost.](#lab-1)                                                                                                                                                  |        | Done   |
-| 2.    | [Implement the program whether the host is a spammer or not.](#lab-2)                                                                                                                                |        | Done   |
-| 3.    | [Implementation of port scanner.](#lab-3)                                                                                                                                                            |        | Done   |
-| 4.    | [Implementing parts of URL.](#lab-4)                                                                                                                                                                 |        | Done   |
-| 5.    | [Encoding and Decoding URI.](#lab-5)                                                                                                                                                                 |        | Done   |
-| 6.    | [Retrieving data from URI.](#lab-6)                                                                                                                                                                  |        | Done   |
-| 7.    | [Implementation of ping programming. (Testing Reachability is Reachable.)](#lab-7)                                                                                                                   |        | Done   |
-| 8.    | [Implementing a list of all network interfaces on the localhost.](#lab-8)                                                                                                                            |        | Done   |
-| 9.    | [Determining whether an IP address is IPv4 or IPv6.](#lab-9)                                                                                                                                         |        | Done   |
-| 10.   | [Implmenting the characteristics of an IP address.](#lab-10)                                                                                                                                         |        | Done   |
-| 11.   | [Develop a program to print the HTTP header.](#lab-11)                                                                                                                                               |        | Done   |
-| 12.   | [Develop a program to create a TCP server and client in which the server provides factorial calculation service whereas the client simply requests to calculate the factorial of a number.](#lab-12) |        | ToDo   |
-| 13.   | [Java multicast programming.](#lab-13)                                                                                                                                                               |        | ToDo   |
-| 14.   | [Implementing RMI Service Interface.](#lab-14)                                                                                                                                                       |        | ToDo   |
-| 15.   | [Implementation of Authenticator Class.](#lab-15)                                                                                                                                                    |        | ToDo   |
-| 16.   | [Implementation of Client Server Communication using UDP.](#lab-16)                                                                                                                                  |        | ToDo   |
-| 17.   | [Implementation of Proxy Class and The ProxySelector Class.](#lab-17)                                                                                                                                |        | ToDo   |
-| 18.   | [Getting information about a Socket.](#lab-18)                                                                                                                                                              |        | ToDo   |
-| 19.   | [Getting information about a ServerSocket.](#lab-19)                                                                                                                                                       |        | ToDo   |
-| 20.   | Implementation of Whois Server.                                                                                                                                                                      |        | ToDo   |
-| 21.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             |        | ToDo   |
-| 22.   | Implementation of Socket program for the UDP Echo Client and Echo Server.                                                                                                                            |        | ToDo   |
-| 23.   | Implementing the name of multicast group.                                                                                                                                                            |        | ToDo   |
-| 24.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           |        | ToDo   |
-| 25.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       |        | ToDo   |
-| 26.   | Program to show any cookie information stored in your system.                                                                                                                                        |        | ToDo   |
+|  S.N. |                                                                                           Topic                                                                                                      |    Date    | Status |
+| :---: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------- | :----- |
+| 1.    | [Looking up internet address of localhost.](#lab-1)                                                                                                                                                  | 2023/03/31 | Done   |
+| 2.    | [Implement the program whether the host is a spammer or not.](#lab-2)                                                                                                                                | 2023/03/31 | Done   |
+| 3.    | [Implementation of port scanner.](#lab-3)                                                                                                                                                            | 2023/03/31 | Done   |
+| 4.    | [Implementing parts of URL.](#lab-4)                                                                                                                                                                 | 2023/03/31 | Done   |
+| 5.    | [Encoding and Decoding URI.](#lab-5)                                                                                                                                                                 | 2023/04/06 | Done   |
+| 6.    | [Retrieving data from URI.](#lab-6)                                                                                                                                                                  | 2023/04/06 | Done   |
+| 7.    | [Implementation of ping programming. (Testing Reachability is Reachable.)](#lab-7)                                                                                                                   | 2023/04/06 | Done   |
+| 8.    | [Implementing a list of all network interfaces on the localhost.](#lab-8)                                                                                                                            | 2023/04/13 | Done   |
+| 9.    | [Determining whether an IP address is IPv4 or IPv6.](#lab-9)                                                                                                                                         | 2023/04/13 | Done   |
+| 10.   | [Implmenting the characteristics of an IP address.](#lab-10)                                                                                                                                         | 2023/04/13 | Done   |
+| 11.   | [Develop a program to print the HTTP header.](#lab-11)                                                                                                                                               | 2023/04/21 | Done   |
+| 12.   | [Develop a program to create a TCP server and client in which the server provides factorial calculation service whereas the client simply requests to calculate the factorial of a number.](#lab-12) | 2023/04/21 | Done   |
+| 13.   | [Java multicast programming.](#lab-13)                                                                                                                                                               | 2023/04/21 | Done   |
+| 14.   | [Implementing RMI Service Interface.](#lab-14)                                                                                                                                                       | 2023/04/28 | Done   |
+| 15.   | [Implementation of Authenticator Class.](#lab-15)                                                                                                                                                    | 2023/04/28 | Done   |
+| 16.   | [Implementation of Client Server Communication using UDP.](#lab-16)                                                                                                                                  | 2023/04/28 | Done   |
+| 17.   | [Implementation of Proxy Class and The ProxySelector Class.](#lab-17)                                                                                                                                | 2023/05/12 | Done   |
+| 18.   | [Getting information about a Socket.](#lab-18)                                                                                                                                                       | 2023/05/12 | Done   |
+| 19.   | [Getting information about a ServerSocket.](#lab-19)                                                                                                                                                 | 2023/05/12 | Done   |
+| 20.   | [Implementation of Whois Server.](#lab-20)                                                                                                                                                           | 2023/06/02 | ToDo   |
+| 21.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             | 2023/06/02 | ToDo   |                                                                                                                       | 2023/06/02 | ToDo   |
+| 22.   | Implementing the name of multicast group.                                                                                                                                                            | 2023/06/09 | ToDo   |
+| 23.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           | 2023/06/09 | ToDo   |
+| 24.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       | 2023/06/09 | ToDo   |
+| 25.   | Program to show any cookie information stored in your system.                                                                                                                                        | 2023/06/09 | ToDo   |
 
 ## Lab 1
 
@@ -1096,7 +1095,7 @@ Received from client: Hello World!
 Received from client: Bye World!
 ```
 
-Sender
+Client
 ```
 'quit' to exit.
 Enter a message: Hello World!
@@ -1242,3 +1241,123 @@ Local Port: 3310
 [Go to Top](#lab)
 
 [Main File](/Lab/20230614/ServerSocketInfo.java)
+
+## Lab 20
+
+### Source Code
+
+```java
+import java.io.*;
+import java.net.*;
+
+public class WhoisQuery {
+    private String server;
+    private int port;
+
+    public WhoisQuery(String server, int port) {
+        this.server = server;
+        this.port = port;
+    }
+
+    public String query(String domain) throws IOException {
+        StringBuilder result = new StringBuilder();
+
+        try (Socket socket = new Socket(server, port);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true)) {
+
+            writer.println(domain);
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                result.append(line).append("\n");
+            }
+        }
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        String server = "whois.verisign-grs.com"; // Replace with the appropriate WHOIS server
+        int port = 43; // Default WHOIS port
+
+        WhoisQuery whois = new WhoisQuery(server, port);
+
+        try {
+            String domain = "github.com"; // Replace with the domain you want to query
+            String response = whois.query(domain);
+            System.out.println("WHOIS Response:\n" + response);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}
+```
+
+### Output
+
+```
+WHOIS Response:
+   Domain Name: GITHUB.COM
+   Registry Domain ID: 1264983250_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.markmonitor.com
+   Registrar URL: http://www.markmonitor.com
+   Updated Date: 2022-09-07T09:10:44Z
+   Creation Date: 2007-10-09T18:20:50Z
+   Registry Expiry Date: 2024-10-09T18:20:50Z
+   Registrar: MarkMonitor Inc.
+   Registrar IANA ID: 292
+   Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+   Registrar Abuse Contact Phone: +1.2086851750
+   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+   Name Server: DNS1.P08.NSONE.NET
+   Name Server: DNS2.P08.NSONE.NET
+   Name Server: DNS3.P08.NSONE.NET
+   Name Server: DNS4.P08.NSONE.NET
+   Name Server: NS-1283.AWSDNS-32.ORG
+   Name Server: NS-1707.AWSDNS-21.CO.UK
+   Name Server: NS-421.AWSDNS-52.COM
+   Name Server: NS-520.AWSDNS-01.NET
+   DNSSEC: unsigned
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of whois database: 2023-06-15T07:53:02Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+NOTICE: The expiration date displayed in this record is the date the
+registrar's sponsorship of the domain name registration in the registry is
+currently set to expire. This date does not necessarily reflect the expiration
+date of the domain name registrant's agreement with the sponsoring
+registrar.  Users may consult the sponsoring registrar's Whois database to
+view the registrar's reported date of expiration for this registration.
+
+TERMS OF USE: You are not authorized to access or query our Whois
+database through the use of electronic processes that are high-volume and
+automated except as reasonably necessary to register domain names or
+modify existing registrations; the Data in VeriSign Global Registry
+Services' ("VeriSign") Whois database is provided by VeriSign for
+information purposes only, and to assist persons in obtaining information
+about or related to a domain name registration record. VeriSign does not
+guarantee its accuracy. By submitting a Whois query, you agree to abide
+by the following terms of use: You agree that you may use this Data only
+for lawful purposes and that under no circumstances will you use this Data
+to: (1) allow, enable, or otherwise support the transmission of mass
+unsolicited, commercial advertising or solicitations via e-mail, telephone,
+or facsimile; or (2) enable high volume, automated, electronic processes
+that apply to VeriSign (or its computer systems). The compilation,
+repackaging, dissemination or other use of this Data is expressly
+prohibited without the prior written consent of VeriSign. You agree not to
+use electronic processes that are automated and high-volume to access or
+query the Whois database except as reasonably necessary to register
+domain names or modify existing registrations. VeriSign reserves the right
+to restrict your access to the Whois database in its sole discretion to ensure
+operational stability.  VeriSign may restrict or terminate your access to the
+Whois database for failure to abide by these terms of use. VeriSign
+reserves the right to modify these terms at any time.
+
+The Registry database contains ONLY .COM, .NET, .EDU domains and
+Registrars.
+```

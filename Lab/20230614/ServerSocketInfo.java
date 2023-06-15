@@ -1,13 +1,12 @@
-import java.net.InetAddress;
 import java.net.ServerSocket;
 
 public class ServerSocketInfo {
     public static void main(String[] args) {
         try {
-            ServerSocket serverSocket = new ServerSocket(3310);
-
-            System.out.println("Local Address: " + serverSocket.getInetAddress());
-            System.out.println("Local Port: " + serverSocket.getLocalPort());
+            try (ServerSocket serverSocket = new ServerSocket(3310)) {
+                System.out.println("Local Address: " + serverSocket.getInetAddress());
+                System.out.println("Local Port: " + serverSocket.getLocalPort());
+            }
         } catch (Exception e) {
             System.err.println("An error occurred: " + e.getMessage());
         }
