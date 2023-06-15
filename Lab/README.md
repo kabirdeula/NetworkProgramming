@@ -22,7 +22,7 @@
 | 18.   | [Getting information about a Socket.](#lab-18)                                                                                                                                                       | 2023/05/12 | Done   |
 | 19.   | [Getting information about a ServerSocket.](#lab-19)                                                                                                                                                 | 2023/05/12 | Done   |
 | 20.   | [Implementation of Whois Server.](#lab-20)                                                                                                                                                           | 2023/06/02 | ToDo   |
-| 21.   | Implementating ports on the local machine by using ServerSocket objects.                                                                                                                             | 2023/06/02 | ToDo   |                                                                                                                       | 2023/06/02 | ToDo   |
+| 21.   | [Implementating ports on the local machine by using ServerSocket objects.](#lab-21)                                                                                                                  | 2023/06/02 | ToDo   |                                                                                                                       | 2023/06/02 | ToDo   |
 | 22.   | Implementing the name of multicast group.                                                                                                                                                            | 2023/06/09 | ToDo   |
 | 23.   | Develop a program to perform basic text messaging between the client and server using UDP.                                                                                                           | 2023/06/09 | ToDo   |
 | 24.   | Develop a program to create a TCP client and server socket to communicate using a simple two-way text message.                                                                                       | 2023/06/09 | ToDo   |
@@ -1361,3 +1361,43 @@ reserves the right to modify these terms at any time.
 The Registry database contains ONLY .COM, .NET, .EDU domains and
 Registrars.
 ```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230614/WhoisQuery.java)
+
+## Lab 21
+
+### Source Code
+
+```java
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class PortListener {
+    public static void main(String[] args) {
+        for (int i = 1; i < 65535; i++) {
+            try {
+                ServerSocket server = new ServerSocket(i);
+                server.close();
+            } catch (IOException e) {
+                System.out.println("There is server port on: " + i);
+            }
+        }
+    }
+}
+```
+
+### Output
+
+```
+There is server port on: 135
+There is server port on: 1025
+There is server port on: 1026
+There is server port on: 1027
+There is server port on: 1028
+```
+
+[Go to Top](#lab)
+
+[Main File](/Lab/20230615/PortListener.java)
